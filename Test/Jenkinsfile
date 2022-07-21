@@ -1,0 +1,19 @@
+pipeline {
+  agent any
+  stages {
+    stage('Source') {
+      steps {
+        git branch: 'main', changelog: false, poll: false, url: 'https://github.com/vsagar100/devops-jenkins-gradle-arti.git'
+      }
+    }
+    stage('Compile') {
+	steps{
+		withGradle()
+		{
+			sh './gradlew -v'
+		}
+      sh 'gradle clean compileJava test'
+      }
+    }
+  }
+}
