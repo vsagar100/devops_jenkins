@@ -10,7 +10,7 @@ pipeline {
 	steps{
 		withGradle()
 		{
-			sh './gradlew -v'
+			sh 'gradle -v'
 		}
       sh 'gradle clean compileJava test'
       }
