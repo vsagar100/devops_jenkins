@@ -2,7 +2,7 @@ pipeline {
   agent any
   environment
   {
-	PATH=/opt/gradle/gradle-6.4.1/bin:${PATH}
+	PATH="/opt/gradle/gradle-6.4.1/bin:${PATH}"
   }
   stages {
     stage('Source') {
