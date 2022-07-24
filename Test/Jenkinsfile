@@ -7,16 +7,20 @@ pipeline {
   stages {
     stage('Source') {
       steps {
-        git branch: 'main', changelog: false, poll: false, url: 'https://github.com/vsagar100/devops-jenkins-gradle-arti.git'
+        git branch: 'main', changelog: false, poll: false, url: 'https://github.com/vsagar100/java-web-app.git'
+		/* 'https://github.com/vsagar100/devops-jenkins-gradle-arti.git'*/
       }
     }
     stage('Compile') {
 	steps{
+		mvn package
+		/*
 		withGradle()
 		{
 			sh 'gradle -v'
 		}
       sh 'gradle clean build'
+      */
       }
     }
     stage('Deploy to Tomcat')
