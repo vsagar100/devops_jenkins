@@ -13,14 +13,14 @@ pipeline {
     }
     stage('Compile') {
 	steps{
-		mvn package
+		mvn package()
 		/*
 		withGradle()
 		{
 			sh 'gradle -v'
 		}
-      sh 'gradle clean build'
-      */
+      		sh 'gradle clean build'
+		*/      
       }
     }
     stage('Deploy to Tomcat')
