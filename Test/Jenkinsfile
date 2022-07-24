@@ -25,7 +25,7 @@ pipeline {
 	{
 		sshagent(['deploy_tomcat_user'])
 		{
-			sh "scp -o StrictHostKeyChecking=no webapp/target/webapp.war azureuser@wtom33ea.centralindia.cloudapp.azure.com:C:/Program Files (x86)/Apache Software Foundation/Tomcat 9.0/webapps"
+			sh "scp -o StrictHostKeyChecking=no webapp/target/webapp.war azureuser@ltom00ea.centralindia.cloudapp.azure.com:/usr/local/tomcat9/webapps"
 		}
 	}
     }
