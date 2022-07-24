@@ -30,7 +30,7 @@ pipeline {
 	{
 		sshagent(['deploy_tomcat_user'])
 		{
-			sh "scp -o StrictHostKeyChecking=no /multi3/target/multi3-3.9-TETRA.war azureuser@ltom00ea.eastasia.cloudapp.azure.com:/usr/local/tomcat9/webapps"
+			sh "scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/war_build_CI/multi3/target/multi3-3.9-TETRA.war azureuser@ltom00ea.eastasia.cloudapp.azure.com:/usr/local/tomcat9/webapps"
 		}
 	}
     }
